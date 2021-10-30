@@ -1,4 +1,5 @@
 ### Master (unreleased)
+- [140](https://github.com/Shopify/job-iteration/pull/140) - Add `JobIteration::DestroyAssociationJob` to be used by Active Record associations with the `dependent: :destroy_async` option
 
 ## v1.3.0 (Oct 7, 2021)
 - [133](https://github.com/Shopify/job-iteration/pull/133) - Moves attributes out of JobIteration::Iteration included block
