@@ -12,7 +12,7 @@ ADD Gemfile .
 ADD job-iteration.gemspec .
 ADD ./lib/job-iteration/version.rb lib/job-iteration/
 
+RUN bundle config set --local with 'test development'
 RUN bundle
 
 ADD . .
-

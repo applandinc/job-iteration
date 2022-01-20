@@ -9,7 +9,8 @@ before_script:
   - sleep 10
 
 script:
-  - docker-compose run --rm app ./container_setup.sh && env APPMAP=true bundle exec rake test
+  - docker-compose run --rm app ./container_setup.sh
+  - docker-compose run --rm -e APPMAP=true app -c "bundle && bundle exec rake test"
 
 after_script:
   - docker-compose down -v

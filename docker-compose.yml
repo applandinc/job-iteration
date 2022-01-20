@@ -16,6 +16,7 @@ services:
       MYSQL_HOST: mysql
       REDIS_HOST: redis
       DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: 'true'
+      APPMAP:
     entrypoint: bash
     ports:
       - '3000'
