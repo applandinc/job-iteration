@@ -1,0 +1,16 @@
+services:
+  - docker
+
+install:
+  - docker-compose build
+
+before_script:
+  - docker-compose up -d mysql redis
+  - sleep 10
+
+script:
+  - docker-compose run --rm app ./container_setup.sh
+  - docker-compose run --rm -e APPMAP=true app -c "bundle && bundle exec rake test"
+
+after_script:
+  - docker-compose down -v

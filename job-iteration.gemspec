@@ -16,8 +16,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/shopify/job-iteration"
   spec.license       = "MIT"
 
-  spec.files         = %x(git ls-files -z).split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
+  if system 'git ls-files'
+    spec.files         = %x(git ls-files -z).split("\x0").reject do |f|
+      f.match(%r{^(test|spec|features)/})
+    end
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
